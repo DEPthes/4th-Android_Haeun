@@ -18,33 +18,30 @@ class MainActivity : AppCompatActivity() {
             Log.d("Btn", "Button clicked")
         }
 
-        // 버튼 목록을 정의하여 일괄 처리
-//        val numberButtons = listOf(
-//            binding.btn0 to "0",
-//            binding.btn1 to "1",
-//            binding.btn2 to "2",
-//            binding.btn3 to "3",
-//            binding.btn4 to "4",
-//            binding.btn5 to "5",
-//            binding.btn6 to "6",
-//            binding.btn7 to "7",
-//            binding.btn8 to "8",
-//            binding.btn9 to "9",
-//            binding.btnPlus to "+",
-//            binding.btnSubtraction to "-",
-//            binding.btnMultiply to "*",
-//            binding.btnDivide to "/"
-//        )
-//
-//        // 버튼 클릭 리스너 설정
-//        numberButtons.forEach { (button, value) ->
-//            button.setOnClickListener {
-//                Log.d("ButtonClick", "Button clicked with value: $value")  // 로그 추가
-//                binding.tvCalculate.append(value)  // TextView에 텍스트 추가
-//            }
-//        }
+        val numberButtons = listOf(
+            binding.btn0 to "0",
+            binding.btn1 to "1",
+            binding.btn2 to "2",
+            binding.btn3 to "3",
+            binding.btn4 to "4",
+            binding.btn5 to "5",
+            binding.btn6 to "6",
+            binding.btn7 to "7",
+            binding.btn8 to "8",
+            binding.btn9 to "9",
+            binding.btnPlus to "+",
+            binding.btnSubtraction to "-",
+            binding.btnMultiply to "*",
+            binding.btnDivide to "/"
+        )
 
-        // Equal 버튼 클릭 리스너
+        numberButtons.forEach { (button, value) ->
+            button.setOnClickListener {
+                Log.d("ButtonClick", "Button clicked with value: $value")  // 로그 추가
+                binding.tvCalculate.append(value)  // TextView에 텍스트 추가
+            }
+        }
+
         binding.btnEqual.setOnClickListener {
             val input = binding.tvCalculate.text.toString()
 
@@ -64,8 +61,8 @@ class MainActivity : AppCompatActivity() {
 
         // Clear 버튼 클릭 리스너
         binding.btnCancel.setOnClickListener {
-            binding.tvCalculate.text = "" // 계산기 화면 초기화
-            binding.tvResult.text = "" // 결과 화면 초기화
+            binding.tvCalculate.text = ""
+            binding.tvResult.text = ""
         }
     }
 
